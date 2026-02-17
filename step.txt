@@ -1,0 +1,29 @@
+# AI Services Project: Step-by-Step Implementation Guide
+
+This document outlines the sequential steps taken to build the Intelligent AI Workflow Engine.
+
+### Phase 1: Foundation & Backend Setup
+1. **Repository Initialization**: Created the project structure and initialized Git.
+2. **Dependency Management**: Defined `requirements.txt` with FastAPI, LangGraph, LangChain, and Google Generative AI.
+3. **Environment Configuration**: Set up `.env` for the Gemini API Key.
+4. **LLM Client Setup**: Created `llm/gemini_client.py` to handle communication with Google Gemini Pro.
+
+### Phase 2: Workflow Design (LangGraph)
+5. **State Definition**: Defined `models/state.py` to manage the lifecycle of a request using `TypedDict`.
+6. **Planner Node**: Implemented `nodes/planner.py` to break natural language requests into logical steps.
+7. **Data Extraction Node**: Developed `nodes/data_fetch.py` using AI to extract entity values (ID, Amount) from raw text.
+8. **Validation & Business Logic**: Created `nodes/validation.py` for deterministic risk assessment and `nodes/approval.py` for final decision making.
+9. **Synthesis Node**: Built `nodes/delivery.py` to generate a comprehensive AI-driven solution summary.
+10. **Graph Orchestration**: Connected all nodes in `main_graph.py` using `StateGraph`.
+
+### Phase 3: API & Frontend Integration
+11. **Server Setup**: Developed `app.py` using FastAPI to serve the workflow and handle CORS.
+12. **Premium UI Development**: Created `index.html` featuring:
+    - Glassmorphism design and animated backgrounds.
+    - Split-layout for Solution vs. Process Timeline.
+    - Real-time animation of workflow steps.
+13. **Error Handling**: Implemented robust `try-except` blocks across both backend nodes and frontend fetch calls.
+
+### Phase 4: Testing & Deployment
+14. **Integration Testing**: Created `test_api.py` to verify backend endpoints via `requests`.
+15. **Git Synchronization**: Pushed final code to GitHub and verified branch status.
