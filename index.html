@@ -328,7 +328,11 @@
 
                 const data = await response.json();
 
-                if (data.error) throw new Error(data.details);
+                // If we have a result, we show it (even if there was a partial AI error)
+                // We only throw if there's an error AND no result at all
+                if (data.error && !data.result) {
+                    throw new Error(data.details || data.error);
+                }
 
                 // Animate steps with staggered delay
                 for (const stepDef of stepDefinitions) {

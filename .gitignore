@@ -1,2 +1,28 @@
+# Environment variables
 .env
-/.env
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+.venv/
+env/
+venv/
+ENV/
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Project specific
+diag_output.txt
+debug_*.py
+test_*.py
+list_models.py
+diagnose_api.py
